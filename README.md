@@ -134,16 +134,14 @@ Motor-Insurance-Pricing-GLM/
 ## 9. How to Run the Project
 
 1. Install R and RStudio.
-2. Install the required packages:
+# Install required packages if not already installed
+install.packages("MASS")
 
-```r
-install.packages(c("CASdatasets", "MASS"))
-```
+# CASdatasets must also be installed
+# Check whether it is available
+packageVersion("CASdatasets")
 
-3. Open `Motor-Insurance-Pricing-GLM.Rproj` in RStudio.
-4. Run the complete analysis:
-
-```r
+# Run the complete project
 source("main.R")
 ```
 

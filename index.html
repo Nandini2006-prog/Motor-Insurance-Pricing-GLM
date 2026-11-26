@@ -100,7 +100,60 @@
           <div class="number">172,948.8</div>
         </div>
       </div>
-    </section>
+    </section> 
+   
+<section id="validation">
+  <h2>Area-wise Model Validation</h2>
+  <p>
+    Hover over the bars to see the Actual-to-Expected
+    (A/E) ratio for each area.
+  </p>
+
+  <div class="card">
+    <canvas id="areaChart"></canvas>
+  </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  const ctx = document.getElementById("areaChart");
+
+  new Chart(ctx, {
+    type: "bar",
+    data: {
+      labels: ["A", "B", "C", "D", "E", "F"],
+      datasets: [{
+        label: "A/E Ratio",
+        data: [1.598, 0.506, 1.714, 0.645, 0.767, 0.980],
+        backgroundColor: "#24476B",
+        borderRadius: 5
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        tooltip: { enabled: true },
+        legend: { display: false }
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          title: {
+            display: true,
+            text: "Actual / Expected Ratio"
+          }
+        },
+        x: {
+          title: {
+            display: true,
+            text: "Area"
+          }
+        }
+      }
+    }
+  });
+</script>
+ 
   </main>
 </body>
 </html>
